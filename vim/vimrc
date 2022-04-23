@@ -1,0 +1,26 @@
+" Activate mouse usage
+set mouse=a
+
+" Highlight sources
+syntax on
+" For more colorshemes run 'ls /usr/share/vim/vim*/colors | grep .vim'
+colorscheme desert 
+
+" Display lines number
+set number
+
+" 
+set clipboard=unnamedplus
+"set guioptions+=a
+
+"
+set hlsearch
+hi Search ctermbg=LightYellow
+hi Search ctermfg=Red
+
+" Ignore case for search, use :set noic to undo
+set ic
+
+" For clipboard
+map <C-y> :w !xclip -sel c <CR><CR>
+

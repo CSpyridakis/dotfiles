@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bu_file=".vimrc-bu-`date +\"D%d-%m-%y_T%H-%M-%S\"`"
+[ -f ~/.vimrc ] && mv ~/.vimrc ~/${bu_file} && echo "Vimrc already exists, create backup"
+
+echo "ln -s ${PWD}/vimrc ~/.vimrc"
+ln -s ${PWD}/vimrc ~/.vimrc
