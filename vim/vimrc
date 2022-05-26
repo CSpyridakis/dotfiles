@@ -13,6 +13,9 @@ set number
 set clipboard=unnamedplus
 "set guioptions+=a
 
+" Matching Parenthesis
+hi MatchParen cterm=bold ctermbg=red ctermfg=green
+
 "
 set hlsearch
 hi Search ctermbg=LightYellow
