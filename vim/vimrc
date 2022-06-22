@@ -1,11 +1,13 @@
 " Activate mouse usage
 set mouse=a
 
+" -------------------------------------------------------------------------------
 " Highlight sources
 syntax on
 " For more colorshemes run 'ls /usr/share/vim/vim*/colors | grep .vim'
 colorscheme desert 
 
+" -------------------------------------------------------------------------------
 " Display lines number
 set number
 
@@ -13,17 +15,55 @@ set number
 set clipboard=unnamedplus
 "set guioptions+=a
 
+" -------------------------------------------------------------------------------
 " Matching Parenthesis
 hi MatchParen cterm=bold ctermbg=red ctermfg=green
 
-"
+" -------------------------------------------------------------------------------
+" Search 
 set hlsearch
+set incsearch 			" Display search while typing 
+set ic 				" Ignore case for search, use :set noic to undo
 hi Search ctermbg=LightYellow
-hi Search ctermfg=Red
+hi Search ctermfg=Red	
 
-" Ignore case for search, use :set noic to undo
-set ic
-
+" -------------------------------------------------------------------------------
 " For clipboard
 map <C-y> :w !xclip -sel c <CR><CR>
+
+" -------------------------------------------------------------------------------
+" Tabs
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
+" -------------------------------------------------------------------------------
+" Source vimrc of a project folder when you run vim .
+" set exrc
+
+" -------------------------------------------------------------------------------
+" Will not wrap very long lines of text
+set nowrap
+
+" 
+" set hidden
+
+
+" -------------------------------------------------------------------------------
+set scrolloff=10 " Cursor more in the middle while scrolling
+
+
+" -------------------------------------------------------------------------------
+set signcolumn=yes
+
+" 
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
+
+
+
+
 
