@@ -1,0 +1,9 @@
+[Desktop Entry]
+# This file should be placed in '/usr/share/applications/<name>.desktop'
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/<TODO add .sh/appimage exec file>
+Name=<TODO add name>
+Icon=/home/<TODO add img path>
