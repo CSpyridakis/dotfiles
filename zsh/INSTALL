@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "source ${PWD}/my_zshrc.zsh >> ${HOME}/.zshrc"
+# echo source ${PWD}/my_zshrc.zsh" >> ${HOME}/.zshrc
