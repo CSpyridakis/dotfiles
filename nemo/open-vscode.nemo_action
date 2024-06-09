@@ -1,0 +1,14 @@
+[Nemo Action]
+
+#### 1) Copy this file on ~/.local/share/nemo/actions
+#### 2) Run nemo -q
+
+Active=true
+Name=Open in VSCode
+Comment=Open VSCode in the selected folder
+Exec=code %F
+Icon-Name=folder
+Selection=none
+Extensions=any;
+EscapeSpaces=true
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo cp ./open-vscode-dir.nemo_action ${HOME}/.local/share/nemo/actions
+cp ./open-vscode-dir.nemo_action ${HOME}/.local/share/nemo/actions
+
+echo cp ./open-vscode.nemo_action ${HOME}/.local/share/nemo/actions
+cp ./open-vscode.nemo_action ${HOME}/.local/share/nemo/actions
+
+echo nemo -q
+nemo -q
