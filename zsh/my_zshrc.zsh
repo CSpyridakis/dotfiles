@@ -178,8 +178,14 @@ alias dcls="docker container ls"                                                
 alias dcla="docker container ls -a"                                                                 # docker list all containers
 alias dcids="docker container ls -a | tr -s ' ' | tail -n +2 | cut -d' ' -f1"                       # docker containers IDs
 alias diids="docker image ls -a | tail -n +2 | tr -s ' ' | cut -d' ' -f 3"                          # docker images IDs
-alias dcra="docker container rm `dcids`"                                                            # docker delete all containers
-alias dira="docker image rm `diids`"                                                                # docker delete all images
+                                                              
+function dcra(){    # docker delete all containers
+    docker container rm `dcids`
+}
+
+function dira(){    # docker delete all images
+    docker image rm `diids`
+}
 
 # ----------------------------------------------------------------------------
 # FIND IN FILES
