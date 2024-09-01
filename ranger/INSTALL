@@ -1,0 +1,15 @@
+#!/bin/bash
+
+RANGER_CONFIG_DIR="$HOME/.config/ranger"
+
+# Create dir if not exist
+echo mkdir -p ${RANGER_CONFIG_DIR}
+mkdir -p ${RANGER_CONFIG_DIR}
+
+# For each file in this DIR
+for file in `ls`
+do
+    echo "ln -s `pwd`/${file} ${RANGER_CONFIG_DIR}/${file}"
+    ln -s `pwd`/${file} ${RANGER_CONFIG_DIR}/${file}
+done
+
