@@ -87,6 +87,16 @@ function fixzshhistory(){
     strings -eS ~/.zsh_history_bad > ~/.zsh_history
     fc -R ~/.zsh_history
 }
+# ----------------------------------------------------------------------------
+# SSH COMMANDS
+# ----------------------------------------------------------------------------
+alias ssh_list_keys="ssh-add -l"
+alias ssh_keygen=" ssh-keygen -t rsa -b 4096 -C" # "email@domain.com"
+
+# Notes:
+# SSH PROXY JUMP:           ssh -J ${user-Proxy}@${ip-Proxy} ${userTarget}@${ipTarget}
+# SSH PROXY COPY KEY:       ssh-copy-id -i ${key_path} -o ProxyJump=jumpuser@jumphost:2455 remoteuser@remotehost
+# SSH USE SPECIFIC KEY:     ssh -o "IdentitiesOnly=yes" -i ${key_path} -p ${ip} ${user}@${ip}
 
 # ----------------------------------------------------------------------------
 # CONFIG FILES
