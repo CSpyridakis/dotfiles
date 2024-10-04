@@ -28,6 +28,8 @@ function ctmux(){
     tmux ls
 }
 
+alias wraptext="cut -c1-$COLUMNS" # cut lines if output is bigger than the width of the pane/terminal: eg. cat log | wraptext
+
 # ----------------------------------------------------------------------------
 # POWER OPERATIONS
 # ----------------------------------------------------------------------------
