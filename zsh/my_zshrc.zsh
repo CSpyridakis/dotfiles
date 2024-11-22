@@ -135,7 +135,7 @@ alias iibip="ip a | grep -B 2 `ipl1` | head -n 1 | tr -s ' ' | tr -d ' ' | cut -
 # ALIASES & FUNCTIONS
 # ----------------------------------------------------------------------------
 alias myaliasg="myalias | cgrep"
-alias myfunctions="myfunctions | cgrep"
+alias myfunctionsg="myfunctions | cgrep"
 
 # ----------------------------------------------------------------------------
 # PACKAGE MANAGER SHORTCUTS
