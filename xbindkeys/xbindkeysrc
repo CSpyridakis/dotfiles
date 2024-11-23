@@ -1,0 +1,12 @@
+# thumb wheel up => icrease volume with grafical feedback
+"xte 'key XF86AudioRaiseVolume'"
+   b:7
+
+# thumb wheel down => lower volume with grafical feedback
+"xte 'key XF86AudioLowerVolume'"
+   b:6
+
+# thumb button => Reload page    
+# Important : DISABLE usage of Ctrl + Alt + Tab if already exists                         
+"sleep 0.1 && xte 'keydown Control_L' 'key r' 'keyup Control_L' "                                        
+    Control+Alt+Mod2 + Tab

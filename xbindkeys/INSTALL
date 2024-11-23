@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# See more info: 
+# https://wiki.archlinux.org/title/Logitech_MX_Master?fbclid=IwAR0o3Tc3F7rpyLLFS834RhIIcE12KP9AuqUCkMZroTe7cZn2UWru7vKNKc8
+
+# Install if not already exist needed packages
+sudo apt install xbindkeys xautomation
+
+# Link dotfile
+echo "ln -s ${PWD}/xbindkeysrc ${HOME}/.xbindkeysrc"
+ln -s ${PWD}/xbindkeysrc ${HOME}/.xbindkeysrc
+
+# Restart service
+pkill xbindkeys && xbindkeys
