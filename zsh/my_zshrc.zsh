@@ -89,6 +89,7 @@ function fixzshhistory(){
     strings -eS ~/.zsh_history_bad > ~/.zsh_history
     fc -R ~/.zsh_history
 }
+
 # ----------------------------------------------------------------------------
 # SSH COMMANDS
 # ----------------------------------------------------------------------------
@@ -123,13 +124,17 @@ alias cmtmuxfuncs="code ~/.tmux-functions.sh"
 alias szr="source ~/.zshrc" 
 
 # ----------------------------------------------------------------------------
-# IP INFO
+# NETWORK INFO
 # ----------------------------------------------------------------------------
 alias ipw="curl ifconfig.me"                    # Global IP Address
 alias ipl="hostname -I | awk '{print $1}'"      # All local IP Addresses
 alias ipl1="ipl | tr -s ' ' | cut -d' ' -f1"   # First local IP Address
 alias iplf="ipl | tr -s ' ' | cut -d' ' -f"    # Select one from local IP Addresses
 alias iibip="ip a | grep -B 2 `ipl1` | head -n 1 | tr -s ' ' | tr -d ' ' | cut -d ':' -f 2" # Internet interace used based on active local IP
+
+alias nc_listen_on_port="nc -lvp"               # Listen on port (usage nc_listen_on_port <port>)
+alias nc_check_port_on="nc -zv"                 # Check if port is open (usage nc_check_port_on <ip> <port>)
+alias nc_connect_to_port="nc -v"                # Connect to an open port (usage nc_connect_to_port <ip> <port>)
 
 # ----------------------------------------------------------------------------
 # ALIASES & FUNCTIONS
