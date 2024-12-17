@@ -23,7 +23,7 @@ hi MatchParen cterm=bold ctermbg=red ctermfg=green
 " Search 
 set hlsearch
 set incsearch 			" Display search while typing 
-set ic 				" Ignore case for search, use :set noic to undo
+set ic 				    " Ignore case for search, use :set noic to undo
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red	
 
@@ -33,15 +33,15 @@ map <C-y> :w !xclip -sel c <CR><CR>
 
 " -------------------------------------------------------------------------------
 " Tabs
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
+set tabstop=4       " Set tab width to 4 spaces
+set shiftwidth=4    " Set indentation width to 4 spaces
+set expandtab       " Use spaces instead of tabs
 
 " -------------------------------------------------------------------------------
 " Source vimrc of a project folder when you run vim .
 " set exrc
 
+set cursorline      " Highlight the current line
 " -------------------------------------------------------------------------------
 " Will not wrap very long lines of text
 set nowrap
