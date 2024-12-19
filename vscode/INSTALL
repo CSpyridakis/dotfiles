@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Take a bu of the old config if exist
+if [ -d "${HOME}/.continue/" ]; then
+    date=$(date +%Y-%m-%d_%H-%M-%S)
+    mkdir -p "${HOME}/.continue-bu/continue-${date}"
+    
+    # TODO copy .continue to .continue-bu/continue-${date}
+fi
+
+# Remove if exist existing .continue dir
+echo "rm -rf ${HOME}/.continue"
+rm -rf "${HOME}"/.continue
+
+# Soft link continue dir to $HOME/.continue
+echo "ln -s $(pwd)/continue ${HOME}/.continue"
+ln -s "$(pwd)"/continue "${HOME}"/.continue
