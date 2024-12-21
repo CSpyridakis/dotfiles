@@ -90,6 +90,15 @@ function fixzshhistory(){
     fc -R ~/.zsh_history
 }
 
+function hi() { # Use history along with fzf
+    local cmd
+    cmd=$(history -E | fzf | tr -s ' ' | cut -d' ' -f5-)
+    if [[ -n "$cmd" ]]; then 
+        echo "> $cmd"
+        sh -c "$cmd"
+    fi
+} 
+
 # ----------------------------------------------------------------------------
 # SSH COMMANDS
 # ----------------------------------------------------------------------------
