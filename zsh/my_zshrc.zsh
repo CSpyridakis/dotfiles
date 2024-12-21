@@ -92,7 +92,7 @@ function fixzshhistory(){
 
 function hi() { # Use history along with fzf
     local cmd
-    cmd=$(history -E | fzf | tr -s ' ' | cut -d' ' -f5-)
+    cmd=$(history -E | fzf --tac | tr -s ' ' | cut -d' ' -f5-)
     if [[ -n "$cmd" ]]; then 
         print -z "$cmd" 
     fi
