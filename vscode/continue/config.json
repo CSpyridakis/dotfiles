@@ -24,5 +24,9 @@
     "title": "Tab Autocomplete Model",
     "provider": "ollama",
     "model": "qwen2.5-coder:3b"
-  }
+  },
+  // Disable Telemetry via VS Code Settings
+  // Navigate to File > Preferences > Settings (or use the keyboard shortcut ctrl/cmd + ,).
+  // Search: "Continue: Telemetry Enabled".
+  "allowAnonymousTelemetry": false
 }
