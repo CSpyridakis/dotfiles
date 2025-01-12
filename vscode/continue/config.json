@@ -2,7 +2,14 @@
   "models": [
     {
       "model": "AUTODETECT",
-      "title": "Autodetect",
+      "title": "Ollama",
+      "provider": "ollama"
+    },
+    {
+      "model": "AUTODETECT",
+      "title": "Ollama (Remote)",
+      "completionOptions": {},
+      "apiBase": "http://192.168.10.160:11434",
       "provider": "ollama"
     }
   ],
