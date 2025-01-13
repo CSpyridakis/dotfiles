@@ -1,0 +1,11 @@
+#!/bin/bash
+
+date=$(date +%Y-%m-%d_%H-%M-%S)
+
+# Create BU if exist
+[ -e ~/.wakatime.cfg ] && echo mv ~/.wakatime.cfg ~/.wakatime.cfg.bu-${date}
+[ -e ~/.wakatime.cfg ] && mv ~/.wakatime.cfg ~/.wakatime.cfg.bu-${date}
+
+# Copy this configuration
+echo cp $(pwd)/.wakatime.cfg ~/.wakatime.cfg
+cp $(pwd)/wakatime.cfg ~/.wakatime.cfg
