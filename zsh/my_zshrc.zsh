@@ -181,11 +181,18 @@ alias gpl="git pull"
 alias gps="git push"
 alias gpsf!="git push --force"
 alias grhh="git reset HEAD --hard"
+alias grh="git reset HEAD^"
 alias gff="git update-index --assume-unchanged"         # To have a file in repo but not track
 alias grf="git update-index --no-assume-unchanged"      # To revert above command
 alias gif="git ls-files -v | grep '^[[:lower:]]'"       # Show ignored files that assume unchanged
 alias gdcl="git clean -xdf"                             # See untracked files
 alias gscl="git clean -xdn"                             # Delete untracked files
+
+function gcg(){ # Clone github repository using ssh
+    # Example: $ gcg "Profilename/repository.git" 
+    echo git clone git@github.com:"${1}"
+    git clone git@github.com:"${1}"
+}
 
 function ghrepodl(){    # Download git repo as git an unzip it
     local repo="$1/archive/master.zip"
