@@ -215,6 +215,67 @@ function gacp(){
     git push
 }
 
+function ghvi(){ # Download a binary from a github version and install into the system 
+     # Download a binary from a GitHub release and install it into the system
+    local github_version_url=$1
+
+    # Ensure the URL is provided
+    if [[ -z "$github_version_url" ]]; then
+        echo "[ERROR] GitHub version URL is required." >&2
+        return 1
+    fi
+
+    # Create a temporary directory and navigate to it
+    local temp_dir=$(mktemp -d /tmp/application.XXXXXX)
+    pushd "$temp_dir" > /dev/null || exit 1
+
+    # Download the file
+    echo "> Downloading from: $github_version_url"
+    wget -q "$github_version_url" -O archive.tar.gz
+    if [[ $? -ne 0 ]]; then
+        echo "[ERROR] Failed to download file." >&2
+        popd > /dev/null
+        rm -rf "$temp_dir"
+        return 1
+    fi
+
+    # Extract the archive
+    echo "> Extracting archive..."
+    tar -xzvf archive.tar.gz
+    if [[ $? -ne 0 ]]; then
+        echo "[ERROR] Failed to extract archive." >&2
+        popd > /dev/null
+        rm -rf "$temp_dir"
+        return 1
+    fi
+
+    # Identify the binary file
+    local binary_files=$(find . -type f -exec file {} + | grep executable | cut -d':' -f1 | head -n 1)
+    if [[ -z "$binary_files" ]]; then
+        echo "[ERROR] No executable binary found in the archive." >&2
+        popd > /dev/null
+        rm -rf "$temp_dir"
+        return 1
+    fi
+
+    # Copy the binary to /usr/local/bin
+    echo "> Installing binary: $binary_files"
+    echo "sudo cp ${binary_files} /usr/local/bin"
+    sudo cp "${binary_files}" /usr/local/bin
+    if [[ $? -ne 0 ]]; then
+        echo "[ERROR] Failed to copy binary to /usr/local/bin." >&2
+        popd > /dev/null
+        rm -rf "$temp_dir"
+        return 1
+    fi
+
+    # Clean up and return
+    popd > /dev/null
+    rm -rf "$temp_dir"
+    echo "[DONE] Installation completed successfully."
+    return 0
+}
+
 # ----------------------------------------------------------------------------
 # DOCKER
 # ----------------------------------------------------------------------------
