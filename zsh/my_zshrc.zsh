@@ -122,6 +122,8 @@ alias ssh_keygen=" ssh-keygen -t rsa -b 4096 -C" # "email@domain.com"
 #   User <user-name> # Not important
 #   ProxyJump <host-name>
 
+alias sshp="ssh -o PubkeyAuthentication=no" # Use only password during ssh
+
 # ----------------------------------------------------------------------------
 # CONFIG FILES
 # ----------------------------------------------------------------------------
@@ -149,6 +151,18 @@ alias nc_connect_to_port="nc -v"                # Connect to an open port (usage
 # ----------------------------------------------------------------------------
 alias myaliasg="myalias | cgrep"
 alias myfunctionsg="myfunctions | cgrep"
+
+# Creates a backup of the file you're about to edit with vim
+# then opens the actual file
+function bvim() {
+    if [ -f "$1" ]; then
+        timestamp=$(date +"%Y%m%d_%H%M%S")
+        dir=$(dirname "$1")
+        base=$(basename "$1")
+        cp "$1" "$dir/.${base}.bu_$timestamp"
+    fi
+    command vim "$@"
+}
 
 # ----------------------------------------------------------------------------
 # PACKAGE MANAGER SHORTCUTS
