@@ -308,6 +308,20 @@ function dira(){    # docker delete all images
 }
 
 # ----------------------------------------------------------------------------
+# TERRAFORM
+# ----------------------------------------------------------------------------
+alias tf="terraform"
+alias tfi="terraform init"        # Initialize the configuration directory
+alias tfv="terraform validate"    # Validate the config
+alias tff="terraform fmt"         # Format the code
+alias tfp="terraform plan"        # Show what will be created/changed
+alias tfa="terraform apply"       # Apply the changes
+alias tfd="terraform destroy"     # Tear down infrastructure
+alias tfo="terraform output"      # Show output values
+alias tfs="terraform state list"  # Show managed resources
+alias tfpr="terraform providers"  # Show used providers
+
+# ----------------------------------------------------------------------------
 # FIND IN FILES
 # ----------------------------------------------------------------------------
 function findInFiles(){
